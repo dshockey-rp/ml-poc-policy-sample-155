@@ -14,6 +14,13 @@
         "ip": "8.8.8.8"
       }
     },
+    "accountant": {
+      "roles": ["employee", "billing"],
+      "location": {
+        "country": "US",
+        "ip": "8.8.8.8"
+      }
+    },
     "eve": {
       "roles": ["customer"],
       "location": {
