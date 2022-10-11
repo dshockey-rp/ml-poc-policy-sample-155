@@ -75,6 +75,12 @@
         "action": "update",
         "type": "finance"
       }
+    ],
+    "expensifying": [
+      {
+        "action": "read",
+        "type": "finance"
+      }
     ]
   }
 }
