@@ -24,10 +24,6 @@ package app.rbac
 # By default, deny requests
 default allow = false
 
-allow {
-
-}
-
 # Allow admins to do anything
 allow {
 	user_is_admin
@@ -83,14 +79,11 @@ user_is_viewer {
 # user_is_granted is a set of permissions for the user identified in the request.
 # The `permission` will be contained if the set `user_is_granted` for every...
 user_is_granted[permission] {
-	#some i, j
-  some j
+	some i, j
 
 	# `role` assigned an element of the user_roles for this user...
-	#role := data.users[input.user].roles[i]
-  role := input.role
+	role := data.users[input.user].roles[i]
 
 	# `permission` assigned a single permission from the permissions list for 'role'...
-	# permission := data.role_permissions[role][j]
-  true
+	permission := data.role_permissions[role][j]
 }
