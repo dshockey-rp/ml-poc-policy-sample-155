@@ -79,10 +79,10 @@ user_is_viewer {
 # user_is_granted is a set of permissions for the user identified in the request.
 # The `permission` will be contained if the set `user_is_granted` for every...
 user_is_granted[permission] {
-	some i, j
+	# some i, j
 
 	# `role` assigned an element of the user_roles for this user...
-	role := data.users[input.user].roles[i]
+	# role := data.users[input.user].roles[i]
 
 	# `permission` assigned a single permission from the permissions list for 'role'...
 	# permission := data.role_permissions[role][j]
