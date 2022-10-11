@@ -65,7 +65,7 @@ user_is_admin {
 
 	# "admin" is the `i`-th element in the user->role mappings for the identified user.
 	# data.users[input.user].roles[i] == "admin"
-  true == true
+  true == false
 }
 
 # user_is_viewer is true if...
