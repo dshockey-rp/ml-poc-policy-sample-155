@@ -47,7 +47,7 @@ allow {
 allow {
 	# Find permissions for the user.
 	some permission
-	user_is_granted[permission]
+	role_is_granted[permission]
 
 	# Check if the permission permits the action.
 	input.action == permission.action
@@ -56,6 +56,16 @@ allow {
 	# unless user location is outside US
 	# country := data.users[input.user].location.country
 	# country == "US"
+}
+
+allow {
+	# Find permissions for the user.
+	some permission
+	user_is_granted[permission]
+
+	# Check if the permission permits the action.
+	input.action == permission.action
+	input.type == permission.type
 }
 
 # user_is_admin is true if...
@@ -79,13 +89,21 @@ user_is_viewer {
 
 # user_is_granted is a set of permissions for the user identified in the request.
 # The `permission` will be contained if the set `user_is_granted` for every...
+role_is_granted[permission] {
+  some i, j
+
+  permission := data.role_permissions[input.roles[i]][j]
+}
+
+# user_is_granted is a set of permissions for the user identified in the request.
+# The `permission` will be contained if the set `user_is_granted` for every...
 user_is_granted[permission] {
 	# some i, j
   some i, j
 
 	# `role` assigned an element of the user_roles for this user...
+  input.user != null
 	# role := data.users[input.user].roles[i]
-  permission := data.role_permissions[input.roles[i]][j]
 
 	# `permission` assigned a single permission from the permissions list for 'role'...
 	# permission := data.role_permissions[role][j]
