@@ -103,6 +103,7 @@ user_is_granted[permission] {
 
 	# `role` assigned an element of the user_roles for this user...
   input.user != null
+  permission := null
 	# role := data.users[input.user].roles[i]
 
 	# `permission` assigned a single permission from the permissions list for 'role'...
