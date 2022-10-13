@@ -52,10 +52,6 @@ allow {
 	# Check if the permission permits the action.
 	input.action == permission.action
 	input.type == permission.type
-
-	# unless user location is outside US
-	# country := data.users[input.user].location.country
-	# country == "US"
 }
 
 allow {
@@ -67,6 +63,10 @@ allow {
   if (permission != null) {
     input.action == permission.action
     input.type == permission.type
+
+    # unless user location is outside US
+    # country := data.users[input.user].location.country
+    # country == "US"
   }
 }
 
@@ -100,15 +100,14 @@ role_is_granted[permission] {
 # user_is_granted is a set of permissions for the user identified in the request.
 # The `permission` will be contained if the set `user_is_granted` for every...
 user_is_granted[permission] {
-	# some i, j, jfaklfjkl
-  # some i, j
-
 	# `role` assigned an element of the user_roles for this user...
-  input.user != null
-  permission := null
-	# role := data.users[input.user].roles[i]
+  if (input.user != null && data.users[input.user] != null) {  
+      some i, j
+      role := data.users[input.user].roles[i]
 
-	# `permission` assigned a single permission from the permissions list for 'role'...
-	# permission := data.role_permissions[role][j]
-  # permission := true
+      # `permission` assigned a single permission from the permissions list for 'role'...
+      permission := data.role_permissions[role][j]
+  } else {
+    permission := null
+  }
 }
