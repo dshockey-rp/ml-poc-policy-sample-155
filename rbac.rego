@@ -99,7 +99,7 @@ role_is_granted[permission] {
 # The `permission` will be contained if the set `user_is_granted` for every...
 user_is_granted[permission] {
 	# some i, j
-  some i, j
+  # some i, j
 
 	# `role` assigned an element of the user_roles for this user...
   input.user != null
