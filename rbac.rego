@@ -64,6 +64,7 @@ allow {
 	user_is_granted[permission]
 
 	# Check if the permission permits the action.
+  permission != null
 	input.action == permission.action
 	input.type == permission.type
 }
