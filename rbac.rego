@@ -99,7 +99,7 @@ role_is_granted[permission] {
 # user_is_granted is a set of permissions for the user identified in the request.
 # The `permission` will be contained if the set `user_is_granted` for every...
 user_is_granted[permission] {
-	# some i, j
+	# some i, j, jfaklfjkl
   # some i, j
 
 	# `role` assigned an element of the user_roles for this user...
