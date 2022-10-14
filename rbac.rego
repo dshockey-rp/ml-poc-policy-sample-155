@@ -60,14 +60,14 @@ allow {
 	user_is_granted[permission]
 
 	# Check if the permission permits the action.
-  if (permission != null) {
-    input.action == permission.action
-    input.type == permission.type
+  # if (permission != null) {
+    # input.action == permission.action
+    # input.type == permission.type
 
     # unless user location is outside US
     # country := data.users[input.user].location.country
     # country == "US"
-  }
+  # }
 }
 
 # user_is_admin is true if...
@@ -84,7 +84,7 @@ user_is_admin {
 user_is_viewer {
 	# for some `i`...
 	some i
-  
+
 
 	# "viewer" is the `i`-th element in the user->role mappings for the identified user.
 	data.users[input.user].roles[i] == "viewer"
