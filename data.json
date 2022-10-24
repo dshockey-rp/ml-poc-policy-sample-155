@@ -20,6 +20,12 @@
         "type": "graded_assignment_grade"
       }
     ],
+    "assistant-ta": [
+      {
+        "action": "update",
+        "type": "open_assignment_grade"
+      }
+    ],
     "professor": [
       {
         "action": "update",
