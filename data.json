@@ -14,6 +14,10 @@
       {
         "action": "update",
         "type": "open_assignment_grade"
+      },
+      {
+        "action": "update",
+        "type": "graded_assignment_grade"
       }
     ],
     "professor": [
