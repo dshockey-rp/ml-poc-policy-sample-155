@@ -1,85 +1,25 @@
 {
-  "users": {
-    "alice": {
-      "roles": ["admin"],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
-    },
-    "bob": {
-      "roles": ["employee", "billing"],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
-    },
-    "accountant": {
-      "roles": ["employee", "billing"],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
-    },
-    "eve": {
-      "roles": ["customer"],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
-    }
-  },
   "role_permissions": {
-    "customer": [
+    "student": [
       {
         "action": "read",
-        "type": "dog"
-      },
-      {
-        "action": "read",
-        "type": "cat"
-      },
-      {
-        "action": "adopt",
-        "type": "dog"
-      },
-      {
-        "action": "adopt",
-        "type": "cat"
-      }
-    ],
-    "employee": [
-      {
-        "action": "read",
-        "type": "dog"
-      },
-      {
-        "action": "read",
-        "type": "cat"
+        "type": "graded_assignment"
       },
       {
         "action": "update",
-        "type": "dog"
-      },
-      {
-        "action": "update",
-        "type": "cat"
+        "type": "open_assignment_answer"
       }
     ],
-    "billing": [
-      {
-        "action": "read",
-        "type": "finance"
-      },
+    "ta": [
       {
         "action": "update",
-        "type": "finance"
+        "type": "open_assignment_grade"
       }
     ],
-    "expensifying": [
+    "professor": [
       {
-        "action": "read",
-        "type": "finance"
+        "action": "update",
+        "type": "graded_assignment_grade"
       }
     ]
   }
